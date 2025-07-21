@@ -138,24 +138,24 @@
       z-index: 1000;
     }
   </style>
+  <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
 </head>
   <meta name="google-site-verification" content="TGW6dnufezf27kabNeReejvfEFvHLI9RPP9h1AwagZ0" />
 <body>
-  <!-- Sign Up / Login Form -->
-<div style="max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px;">
-  <h2 style="text-align:center;">Create Account / Login</h2>
-  <form onsubmit="handleSubmit(event)">
-    <label for="username">Username:</label><br>
-    <input type="text" id="username" name="username" required style="width:100%; padding: 8px;"><br><br>
 
-    <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password" required style="width:100%; padding: 8px;"><br><br>
-
-    <button type="submit" style="width:100%; padding: 10px; background-color: green; color: white; border: none;">Submit</button>
-  </form>
-
-  <p id="message" style="text-align:center; margin-top:10px; color:green;"></p>
-</div>
   <header>
     <h1>MEK POEMS</h1>
     <p>Where Every Print Tells a Story</p>
