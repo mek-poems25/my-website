@@ -140,6 +140,21 @@
   </style>
 </head>
 <body>
+  <!-- Sign Up / Login Form -->
+<div style="max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px;">
+  <h2 style="text-align:center;">Create Account / Login</h2>
+  <form onsubmit="handleSubmit(event)">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" required style="width:100%; padding: 8px;"><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required style="width:100%; padding: 8px;"><br><br>
+
+    <button type="submit" style="width:100%; padding: 10px; background-color: green; color: white; border: none;">Submit</button>
+  </form>
+
+  <p id="message" style="text-align:center; margin-top:10px; color:green;"></p>
+</div>
   <header>
     <h1>MEK POEMS</h1>
     <p>Where Every Print Tells a Story</p>
@@ -286,6 +301,19 @@
         });
       }
     };
+  function handleSubmit(event) {
+    event.preventDefault(); // prevent page reload
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // This just shows a message, no real saving yet
+    document.getElementById('message').textContent =
+      `Welcome, ${username}! (This is a test. Real login not set up yet)`;
+
+    // Optionally clear form
+    event.target.reset();
+  }
   </script>
 </body>
 </html>
