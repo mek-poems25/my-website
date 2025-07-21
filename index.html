@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MEK Poems | Where Every Print Tells a Story</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: url('book.jpg') no-repeat center center;
+      background-size: cover;
+      color: #fff;
+      padding: 6rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width:  100%;
+      height: 100%;
+      background-color: rgba(11, 26, 47, 0.7);
+      z-index: 0;
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    header p {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+    nav {
+      background: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #0b1a2f;
+      font-weight: bold;
+    }
+    .container {
+      padding: 2rem;
+    }
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .work-item {
+      border: 1px solid #ccc;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .work-item h3 {
+      margin-top: 0.5rem;
+    }
+    .button {
+      padding: 0.5rem 1rem;
+      background: #0b1a2f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    .about-section img {
+      width: 250px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .about-section div {
+      flex: 1;
+    }
+    .footer {
+      background: #0b1a2f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .cart-section {
+      background-color: #f0f0f0;
+      padding: 2rem;
+      margin-top: 2rem;
+      border-radius: 10px;
+    }
+    .cart-section h2 {
+      margin-top: 0;
+    }
+    .cart-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .cart-list li {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MEK POEMS</h1>
+    <p>Where Every Print Tells a Story</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#works">Our Works</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container cart-section" id="cart">
+    <h2>🛒 Your Cart</h2>
+    <p>Each item is <strong>$5</strong>.</p>
+    <ul class="cart-list" id="cart-items"></ul>
+    <p><strong>Total: $<span id="cart-total">0</span></strong></p>
+  </div>
+
+  <div class="container" id="works">
+    <h2>Our Creative Works</h2>
+    <div class="work-grid">
+      <div class="work-item">
+        <img src="book.jpg" alt="Book" width="100%">
+        <h3>Voices of MEK</h3>
+        <p>A powerful collection of reflective poetry.</p>
+        <button class="button" onclick="addToCart('Voices of MEK')">Add to Cart</button>
+      </div>
+      <div class="work-item">
+        <img src="design.jpg" alt="Design" width="100%">
+        <h3>Brand Designs</h3>
+        <p>Creative prints and custom brand visuals.</p>
+        <button class="button" onclick="addToCart('Brand Designs')">Add to Cart</button>
+      </div>
+      <div class="work-item">
+        <img src="article.jpg" alt="Article" width="100%">
+        <h3>Articles & Essays</h3>
+        <p>Inspirational insights and educational pieces.</p>
+        <button class="button" onclick="addToCart('Articles & Essays')">Add to Cart</button>
+      </div>
+      <div class="work-item">
+        <img src="training.jpg" alt="Training" width="100%">
+        <h3>Digital Skills Training</h3>
+        <p>Teaching web design, graphics, and basic computing skills.</p>
+        <button class="button" onclick="addToCart('Digital Skills Training Material')">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="about">
+    <h2>About MEK Poems</h2>
+    <div class="about-section">
+      <img src="Elias.jpg" alt="Founder: Mohammad Elias Kirabira">
+      <div>
+        <p><strong>MEK Poems</strong> was founded by <strong>Mohammad Elias Kirabira</strong>, a poet, educator, designer, and biomedical professional.</p>
+        <p>Our services include creative writing, branding, website development & maintenance, and computer literacy training.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="contact">
+    <h2>Contact Us</h2>
+    <p>📞 +256 788 230 472 </p>
+    <p>📧 info@mekpoems.com</p>
+    <p>📍 Kampala, Uganda</p>
+  </div>
+
+  <footer class="footer">
+    &copy; 2025 MEK POEMS | Designed by MEK POEMS
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/256788230472" target="_blank">💬 Chat on WhatsApp</a>
+
+  <script>
+    const cartList = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+
+    function getCart() {
+      return JSON.parse(localStorage.getItem("cart")) || [];
+    }
+
+    function setCart(cart) {
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+
+    function renderCart() {
+      const cart = getCart();
+      if (cartList) {
+        cartList.innerHTML = "";
+        cart.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          cartList.appendChild(li);
+        });
+        cartTotal.textContent = cart.length * 5;
+      }
+    }
+
+    function addToCart(itemName) {
+      const cart = getCart();
+      cart.push(itemName);
+      setCart(cart);
+      renderCart();
+      alert(`✅ "${itemName}" added to your cart.`);
+    }
+
+    window.onload = function () {
+      renderCart();
+
+      document.querySelectorAll('.work-item').forEach(item => {
+        item.addEventListener('click', function () {
+          const title = this.querySelector('h3')?.textContent;
+          switch (title) {
+            case 'Voices of MEK':
+              alert("📖 Accessing 'Voices of MEK' poetry collection...");
+              break;
+            case 'Brand Designs':
+              alert("🎨 Our brand design services will be available soon.");
+              break;
+            case 'Articles & Essays':
+              alert("📘 Stay tuned! Articles & essays are being prepared.");
+              break;
+            case 'Digital Skills Training':
+              alert("💻 Digital training enrollment will open soon.");
+              break;
+            default:
+              alert("Clicked: " + title);
+          }
+        });
+      });
+
+      const about = document.querySelector('#about');
+      if (about) {
+        about.addEventListener('click', () => {
+          alert("🧑‍🏫 Founder: Imaam Mohammad Elias Kirabira\nPoet | Educator | Designer | Biomedical Professional.");
+        });
+      }
+
+      const contact = document.querySelector('#contact');
+      if (contact) {
+        contact.addEventListener('click', () => {
+          const go = confirm("📞 Would you like to contact us on WhatsApp?");
+          if (go) window.open('https://wa.me/256788230472', '_blank');
+        });
+      }
+    };
+  </script>
+</body>
+</html>
